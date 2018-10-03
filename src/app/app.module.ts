@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ReportNavigationComponent } from './report-navigation/report-navigation.component';
+import { WebNavigationComponent } from './web-navigation/web-navigation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReportNavigationComponent
+    ReportNavigationComponent,
+    WebNavigationComponent
   ],
   imports: [
     BrowserModule

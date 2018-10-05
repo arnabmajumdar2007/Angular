@@ -1,49 +1,16 @@
+
 <ul class="nav navbar-nav side-nav">
-    <li class="active">
-        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i>Executive Dashboard</a>
-    </li>
-    
-    <li>
-        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> MMM Results <i class="fa fa-fw fa-caret-down"></i></a>
-        <ul id="demo" class="collapse">
-            <li>
-                <a href="#">Derived Gas</a>
-            </li>
-            <li>
-                <a href="#">RGUs</a>
-            </li>
-            <li>
-                <a href="#">XM RGUs</a>
-            </li>
-            <li>
-                <a href="#">XM Links</a>
-            </li>
+    <li *ngFor="let link of reportNavigation;">
+        <a [attr.href]="link.href ? link.href: ''">
+            <i [ngClass]="link.iconClass ? link.iconClass : ''"></i>
+            {{link.title}}
+        </a>
+        <ul *ngIf="link.navigationItems" role="menu">
+                <li *ngFor="let link of link.navigationItems">
+                    <a [attr.href]="link.url">
+                        {{link.title}}
+                    </a>
+                </li>
         </ul>
-    </li>
-    <li>
-        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> MMM Data <i class="fa fa-fw fa-caret-down"></i></a>
-        <ul id="demo1" class="collapse">
-            <li>
-                <a href="#">Competitive Speed</a>
-            </li>
-            <li>
-                <a href="#">Call Volume</a>
-            </li>
-            <li>
-                <a href="#">Site Visits</a>
-            </li>
-            <li>
-                <a href="#">XF Store Traffic</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a href=""><i class="fa fa-fw fa-file"></i> Quarterly Optimization</a>
-    </li>
-    <li>
-        <a href=""><i class="fa fa-fw fa-dashboard"></i> Portfolio Management Tool</a>
-    </li>
-    <li>
-        <a href=""><i class="fa fa-fw fa-dashboard"></i> Business Dashboard</a>
     </li>
 </ul>
